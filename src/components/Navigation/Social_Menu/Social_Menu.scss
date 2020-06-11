@@ -1,0 +1,30 @@
+.header__social {
+  position: absolute;
+  bottom: 20px;
+  align-items: flex-end;
+  display: flex;
+  &--icon {
+    width: 15px;
+    height: 15px;
+    background-position: center;
+    background-size: contain;
+    margin: 0 10px;
+    opacity: 0.75;
+    transition: 0.3s ease all;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &--facebook {
+    background-image: url(../../../images/icons/facebook.svg);
+  }
+  &--instagram {
+    background-image: url(../../../images/icons/instagram.svg);
+  }
+  &--linkedin {
+    background-image: url(../../../images/icons/linkedin.svg);
+  }
+  &--vk {
+    background-image: url(../../../images/icons/vk.svg);
+  }
+}

@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.scss';
+import { Footer } from './components/Footer/Footer';
+import { Nav } from './components/Navigation/Nav';
+import { Contact } from './pages/Contact/Contact';
+import { AboutPage } from './pages/About/About';
+import { Home } from './pages/Home/Home';
+import { PageNotFound } from './pages/NotFound/PageNotFound';
+import {Projects} from './pages/Projects/Projects'
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <section className="main-wrapper">
+        <Nav />
+
+        {/* <Switch> */}
+          <Route exact path="/" component={Home} />
+          <Route path="/o-nas" component={AboutPage} />
+          <Route path="/portfolio" component={Projects} />
+          <Route path="/kontakt" component={Contact} />
+          {/* <Route component={PageNotFound} /> */}
+        {/* </Switch> */}
+
+        <Footer />
+      </section>
+    </Router>
   );
-}
+};
 
 export default App;

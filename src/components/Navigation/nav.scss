@@ -1,0 +1,130 @@
+.header {
+  &__nav {
+    position: fixed;
+    height: 25px;
+    left: 0;
+    width: 100%;
+    top: 0;
+    background-color: #f0f0f0;
+    z-index: 111;
+  }
+
+  &__menu {
+
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    display: flex;
+    background-color: rgba(#0d0d0d, 0.95);
+    margin: 0;
+    top: 25px;
+    padding: 0;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: 0.3s ease all;
+    left: 25px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+    &.active {
+      position: fixed;
+      width: calc(100vw - 65px);
+      height: calc(100vh - 50px);
+      opacity: 1;
+      z-index: 99;
+    }
+  }
+
+  &__menu-item {
+    list-style-type: none;
+    margin: 0 20px;
+
+    a {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      line-height: 40px;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 100ms linear;
+      opacity: 0.70;
+
+      &.active,
+      &:hover {
+
+        opacity: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &:before {
+          content: '';
+          width: 80%;
+          height: 3px;
+          background-color: #fff;
+          position: absolute;
+          bottom: 0;
+        }
+
+      }
+    }
+  }
+
+  &__hamburger {
+    width: 20px;
+    height: 20px;
+    display: block;
+    z-index: 99;
+    position: fixed;
+    background: transparent;  
+    right: 25px;
+    cursor: pointer;
+    top: 3px;
+    
+    span {
+      display: inline-block;
+      position: absolute;
+      
+      left: 50%;
+      top: 50%;
+      bottom: auto;
+      right: auto;
+      transform: translateX(-50%) translateY(-50%);
+      width: 18px;
+      background-color: #000000;
+      height: 2px;
+      &:before, &:after {
+        content: '';
+        width: 100%;
+        transition: 0.3s ease all;
+        height: 100%;
+        position: absolute;
+        background-color: #000000;
+        right: 0;
+      }
+      &:after {
+        transform: translateY(5px) rotate(0deg);
+      }
+      &:before {
+        transform: translateY(-5px) rotate(0deg);
+
+      }
+    }
+    &.active {
+      span {
+        background-color: transparent;
+        &:after {
+          transform: translateY(0) rotate(-45deg);
+        }
+        &:before {
+          transform: translateY(0) rotate(45deg);
+        
+        }
+      }
+    }
+  }
+}

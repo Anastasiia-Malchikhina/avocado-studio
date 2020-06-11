@@ -1,0 +1,40 @@
+.video-with-text {
+  display: flex;
+  margin-bottom: 80px;
+  position: relative;
+  flex-direction: column;
+  @media screen and (min-width: 1200px) {
+    flex-direction: row;
+  }
+  & > div {
+   
+    @media screen and (min-width: 1200px) {
+      width: 50%;
+    }
+  }
+  &__green-column{
+    background-color: #66cc33;
+    
+    &--content {
+
+      padding: 60px 20px;
+      max-width: 500px;
+      margin: 0 auto;
+      color: #fff;
+      @media screen and (min-width: 1200px) {
+        padding: 120px 20px;
+      }
+      h5 {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 22px;
+        font-weight: 400;
+        color: #fff;
+      }
+      p {
+        color: #fff;
+        margin-top: 20px;
+      }
+    }
+  }
+}
