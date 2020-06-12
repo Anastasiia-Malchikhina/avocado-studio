@@ -12,6 +12,7 @@ class Formm extends React.Component {
     telefon: '',
     subject: '',
     message: '',
+    feedback: ''
   }
   handleSubmit(e) {
     e.preventDefault()
@@ -24,13 +25,15 @@ class Formm extends React.Component {
       subject: subject,
       message_html: message,
      }
-
+     this.setState({feedback: "success"})
      emailjs.send(
       'gmail',
       'template_OQSW3N3K',
        templateParams,
       'user_dxLm5aXSn7p8J6OF2JEgd'
-     )
+     ).then(
+        this.setState({feedback: "Wiadomość została wysłana"})
+    );
      this.resetForm()
     }
     resetForm() {
@@ -45,6 +48,7 @@ class Formm extends React.Component {
     handleChange = (param, e) => {
       this.setState({ [param]: e.target.value })
     }
+    
   render () {
     
     return (
@@ -55,7 +59,7 @@ class Formm extends React.Component {
         <Form onSubmit={this.handleSubmit.bind(this)}>
         <FormGroup controlId="formBasicName">
             <Label className="text-muted">Name</Label>
-            <Input
+            <Input required
               type="text"
               name="name"
               value={this.state.name}
@@ -64,9 +68,9 @@ class Formm extends React.Component {
               placeholder="Name"
             />
           </FormGroup>
-          <FormGroup controlId="formBasicEmail">
+          <FormGroup  controlId="formBasicEmail">
             <Label className="text-muted">Email address</Label>
-            <Input
+            <Input required
               type="email"
               name="email"
               value={this.state.email}
@@ -77,7 +81,7 @@ class Formm extends React.Component {
           </FormGroup>
           <FormGroup controlId="formBasicSubject">
             <Label className="text-muted">Telefon</Label>
-            <Input
+            <Input 
               type="text"
               name="telefon"
               className="text-primary"
@@ -88,7 +92,7 @@ class Formm extends React.Component {
             </FormGroup>
           <FormGroup controlId="formBasicSubject">
             <Label className="text-muted">Subject</Label>
-            <Input
+            <Input 
               type="text"
               name="subject"
               className="text-primary"
@@ -99,18 +103,21 @@ class Formm extends React.Component {
           </FormGroup>
           <FormGroup controlId="formBasicMessage">
             <Label className="text-muted">Message</Label>
-            <Input
+            <Input required
               type="textarea"
               name="message"
               className="text-primary"
               value={this.state.message}
               onChange={this.handleChange.bind(this, 'message')}
             />
+           
           </FormGroup>
           <Button variant="primary" type="submit">
             Submit
           </Button>
+          <p className="feedback">{this.state.feedback}</p>
         </Form>
+
         </div>
     </> 
 
@@ -123,68 +130,3 @@ class Formm extends React.Component {
 export default Formm;
 
 
-
-
-
-
-
-
-// import React from 'react';
-// import './Form.scss';
-// import axios from 'axios';
-// import MainHeading from '../Heading/Heading';
-// import SubHeading from '../Heading/SubHeading';
-
-
-// class Form extends React.Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       fname: '',
-//       telefon: '',
-//       email: '',
-//       subject: ''
-//     }
-//     this.handleChange = this.handleChange.bind(this);
-//     this.handleSubmit =  this.handleSubmit.bind(this);
-//   }
-//   handleChange = e => {
-//     this.setState({ [e.target.name]:  e.target.value})
-//   }
-//   async handleSubmit(e) {
-//     e.preventDefault();
-//     const {fname,telefon,email,subject} = this.state;
-//     const form = await axios.post('../api/form', {
-//       fname,
-//       telefon,
-//       email,
-//       subject
-//     });
-//   }
-//   render () {
-//     return  (
-//       <div  className="container">
-//       <MainHeading>witaj.</MainHeading>
-//       <SubHeading>JAK MOŻEMY CI DZISIAJ POMÓC?</SubHeading>
-//       <form onSubmit={this.handleSubmit} action="/action_page.php">
-//       <label>Imię i Nazwisko</label>
-//       <input type="text"  onChange={this.handleChange} id="fname" name="fname" placeholder=""/>
-//       <label>Telefon</label>
-//       <input type="text"id="telefon"  onChange={this.handleChange} name="telefon" placeholder=""/>
-
-
-//       <label>Email</label>
-//       <input type="email"id="email"name="email"placeholder=""  onChange={this.handleChange}/>
-
-
-//       <label>Wiadomość</label>
-//       <textarea id="subject"name="subject"placeholder=""></textarea>
-//       <input type="submit"value="Wyślij"/>
-//       </form>
-//     </div>
-//     );
-
-//   }
-// }
-
-// export default Form;

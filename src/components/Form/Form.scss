@@ -13,6 +13,8 @@ label {
 }
 form {
    padding: 20px;
+   padding-bottom: 50px;
+
 }
 input[type=text],input[type=email], select, textarea {
    font-weight: 300;
@@ -55,8 +57,7 @@ textarea {
    border: 1px solid rgba(0,0,0,.2);
    padding: 10px 30px;
    position: relative; 
-   margin-bottom: 50px;
-   background-color: transparent;
+    background-color: transparent;
 
 }
 .btn:hover {
@@ -64,4 +65,10 @@ textarea {
    color: #ffffff;
    border-color: #0d0d0d;
   
+}
+.feedback {
+   color: #66cc33;
+   font-size: 14px;
+   font-weight: 600;
+   
 }
