@@ -11,6 +11,8 @@
     align-items: center;
     min-height: 500px;
     justify-content: center;
+
+
     &__name {
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -24,6 +26,7 @@
       margin-top: 5px;
       color: #ffffff;
       font-weight: 300;
+      text-align: center;
     }
     p {
       letter-spacing: 0.02em;
@@ -31,7 +34,10 @@
       max-width: 600px;
       text-align: center;
       line-height: 1.6;
-      font-size: 26px;
+      font-size: 24px;
+      @media screen and (min-width: 1200px) { 
+        font-size: 26px;
+      }
     }
   }
 }
