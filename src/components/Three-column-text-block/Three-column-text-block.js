@@ -18,7 +18,7 @@ const ThreeColumnTextBlock = () => {
     }
   ];
   const items = aboutContent.map((item, key) =>
-    <div className="about__item" >
+    <div className="about__item" key={item.title}>
       <h4>{item.title}</h4>
       <p>{item.text}</p>
     </div>

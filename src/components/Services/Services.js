@@ -55,7 +55,7 @@ const  Services = () => {
 
   ];
   const items = servicesContent.map((item, key) =>
-    <div className="services__item" >
+    <div className="services__item" key={item.title}>
       <img className="services__item--icon" src={item.icon} alt=""/>
       <h4 className="services__item--title">{item.title}</h4>
       <p>{item.text}</p>
@@ -65,7 +65,7 @@ const  Services = () => {
     <>
     <MainHeading>rozwiązywanie problemów</MainHeading>
     <SubHeading>Z KREATYWNOŚCIĄ. TO CO ROBIMY.</SubHeading>
-    <div class="services container">
+    <div className="services container">
       {items}
     </div>
     </> 

@@ -4,7 +4,7 @@ import './Form.scss';
 import * as emailjs from 'emailjs-com'
 import MainHeading from '../Heading/Heading';
 import SubHeading from '../Heading/SubHeading';
-import { Button, FormFeedback, Form, FormGroup, Label, Input } from 'reactstrap'
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap'
 class Formm extends React.Component {
   state = {
     name: '',
@@ -57,7 +57,7 @@ class Formm extends React.Component {
           <MainHeading>witaj.</MainHeading>
           <SubHeading>JAK MOŻEMY CI DZISIAJ POMÓC?</SubHeading>
         <Form onSubmit={this.handleSubmit.bind(this)}>
-        <FormGroup controlId="formBasicName">
+        <FormGroup >
             <Label className="text-muted">Name</Label>
             <Input required
               type="text"
@@ -68,7 +68,7 @@ class Formm extends React.Component {
               placeholder="Name"
             />
           </FormGroup>
-          <FormGroup  controlId="formBasicEmail">
+          <FormGroup >
             <Label className="text-muted">Email address</Label>
             <Input required
               type="email"
@@ -79,7 +79,7 @@ class Formm extends React.Component {
               placeholder="Enter email"
             />
           </FormGroup>
-          <FormGroup controlId="formBasicSubject">
+          <FormGroup >
             <Label className="text-muted">Telefon</Label>
             <Input 
               type="text"
@@ -90,7 +90,7 @@ class Formm extends React.Component {
               placeholder="telefon"
             />
             </FormGroup>
-          <FormGroup controlId="formBasicSubject">
+          <FormGroup >
             <Label className="text-muted">Subject</Label>
             <Input 
               type="text"
@@ -101,7 +101,7 @@ class Formm extends React.Component {
               placeholder="Subject"
             />
           </FormGroup>
-          <FormGroup controlId="formBasicMessage">
+          <FormGroup >
             <Label className="text-muted">Message</Label>
             <Input required
               type="textarea"

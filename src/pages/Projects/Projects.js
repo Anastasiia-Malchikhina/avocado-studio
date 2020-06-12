@@ -1,5 +1,5 @@
 import React from 'react';
-import Slideshow from '../Home/Hero/Hero';
+import Slideshow from '../../components/Hero/Hero';
 import Form from '../../components/Form/Form';
 import Navigation from '../../components/Projects/Navigation/Navigation';
 

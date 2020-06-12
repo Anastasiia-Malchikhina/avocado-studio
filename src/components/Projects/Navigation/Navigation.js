@@ -9,15 +9,15 @@ import SubHeading from '../../Heading/SubHeading';
 const Navigation = () => {
 
   const Navi =  Category.map(item => 
-    <div className="navigation__item">
-      <NavLink exact ActiveClassName="_active" to={'/' + item.url}>
+    <div className="navigation__item" key={item.url}>
+      <NavLink exact activeClassName="_active" to={'/' + item.url}>
         {item.name}
       </NavLink>
     </div>
     );
 
     const SortProjects = Category.map((item, key) => 
-      <Switch>
+      <Switch key={item.name}>
         <Route exact path='/'  >
           <Projects category={item.name}/>
         </Route>
@@ -34,7 +34,7 @@ const Navigation = () => {
       <SubHeading>owoce naszych działań</SubHeading>
       <div className="navigation">
         <div className="navigation__item">
-          <NavLink exact ActiveClassName="_active" to='/'>
+          <NavLink exact activeClassName="_active" to='/'>
             Wszystkie
           </NavLink>
         </div>

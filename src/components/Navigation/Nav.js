@@ -15,25 +15,25 @@ class Nav extends React.Component {
 
       <header className="header">
         <div className="header__nav">
-          <a className={`header__hamburger ${isBoxVisible ? "active" : ""}`} onClick={this.toggleBox}><span></span></a>
+          <a href="/#" className={`header__hamburger ${isBoxVisible ? "active" : ""}`} onClick={this.toggleBox}><span></span></a>
           <ul className={`header__menu ${isBoxVisible ? "active" : ""}`}>
             <li className="header__menu-item">
-              <NavLink exact ActiveClassName="_active" to="/">
+              <NavLink exact activeClassName="_active" to="/">
                 Home
               </NavLink>
             </li>
             <li className="header__menu-item">
-              <NavLink  ActiveClassName="_active" to="/o-nas">
+              <NavLink  activeClassName="_active" to="/o-nas">
                 O nas
               </NavLink>
             </li>
             <li className="header__menu-item">
-              <NavLink ActiveClassName="_active" to="/portfolio">
+              <NavLink activeClassName="_active" to="/portfolio">
                 Portfolio
               </NavLink>
             </li>
             <li className="header__menu-item">
-              <NavLink  ActiveClassName="_active" to="/kontakt">
+              <NavLink  activeClassName="_active" to="/kontakt">
                 Kontakt
               </NavLink>
             </li>

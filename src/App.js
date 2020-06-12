@@ -6,7 +6,6 @@ import { Nav } from './components/Navigation/Nav';
 import { Contact } from './pages/Contact/Contact';
 import { AboutPage } from './pages/About/About';
 import { Home } from './pages/Home/Home';
-import { PageNotFound } from './pages/NotFound/PageNotFound';
 import {Projects} from './pages/Projects/Projects'
 const App = () => {
   return (
@@ -14,14 +13,14 @@ const App = () => {
       <section className="main-wrapper">
         <Nav />
 
-        {/* <Switch> */}
+        <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/o-nas" component={AboutPage} />
           <Route path="/portfolio" component={Projects} />
           <Route path="/kontakt" component={Contact} />
-          {/* <Route component={PageNotFound} /> */}
-        {/* </Switch> */}
-
+  
+        </Switch>
+{/*  */}
         <Footer />
       </section>
     </Router>

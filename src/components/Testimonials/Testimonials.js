@@ -37,7 +37,7 @@ class Testimonials extends React.Component {
     ];
 
   const items = testimonialsContent.map((item, key) =>
-      <div className="testimonial">
+      <div className="testimonial" key={item.name}>
         <p>{item.testimonial}</p>
         <h5 className="testimonial__name">{item.name}</h5>
         <h6 className="testimonial__company">{item.company}</h6>

@@ -11,9 +11,9 @@ const Projects = (props) => {
     
     (item.category.name === props.category ? 
 
-        <div className="works__item">
+        <div className="works__item" key={item.name}>
           <h4 className="works__item--name">{item.name}</h4>
-          <img src={item.image}/>
+          <img src={item.image} alt={item.name}/>
           <p className="works__item--desc">{item.desc}</p>
         </div>
         : ('')
