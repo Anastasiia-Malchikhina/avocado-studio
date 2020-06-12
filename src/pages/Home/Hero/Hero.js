@@ -13,7 +13,7 @@ class Slideshow extends React.Component {
       infinite: true,
       arrows: false,
       speed: 1000,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 2500,
       slidesToShow: 1,
       slidesToScroll: 1

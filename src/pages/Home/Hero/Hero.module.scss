@@ -6,6 +6,7 @@
     display: flex!important;
     justify-content: center;
     align-items: center;
+   
   }
   &__img {
     width: 100%;
@@ -13,18 +14,27 @@
     object-position: center;
     object-fit: cover;
     max-height: calc(100vh - 50px);
+    height: 100vh;
 
+    @media screen and (min-width: 1200px) { 
+      height: 100vh;
+    }
   }
   &__title {
     position: absolute;
-    font-size: 40px;
+    font-size: 28px;
     color: white;
     margin: 0;
+    padding: 25px;
     font-weight: 400;
-    
-    max-width: 800px;
+    max-width: 100vw;
+    text-align: center;
+    // word-break: break-all;
+   
     @media screen and (min-width: 1200px) { 
       font-size: 84px;
+      max-width: 800px;
+      text-align: left;
     }
     strong {
       font-weight: bold;
