@@ -13,12 +13,12 @@ class Slideshow extends React.Component {
     infinite: true,
     arrows: false,
     speed: 1000,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1
   };
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
   }
   render() {
   
@@ -54,11 +54,11 @@ class Slideshow extends React.Component {
     );
 
     return (
-      <React.StrictMode>
+
         <Slider {...this.settings} className={styles.hero}>
           {items}
         </Slider>
-      </React.StrictMode>
+
     );
   }
 }
