@@ -25,7 +25,9 @@ const Navigation = () => {
         <Route exact path={'/' + item.url}  >
           <Projects category={item.name} />
         </Route>
-
+        <Route exact path={'/portfolio' }  >
+          <Projects category={item.name} />
+        </Route>
       </Switch>
     );
   return (
